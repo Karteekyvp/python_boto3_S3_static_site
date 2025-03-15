@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('Deploy Static Website') {
             steps {
-                sh 'python3 deploy_static_site.py'
+                sh '''
+                    source venv/bin/activate
+                    python deploy_static_site.py
+                '''
             }
         }
     }
 }
-
