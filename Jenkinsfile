@@ -7,7 +7,8 @@ pipeline {
                     which python3
                     python3 -m venv venv
                     source venv/bin/activate
-                    python3 -c "import boto3; print(boto3.__version__)"
+                    pip install boto3  # Explicitly install boto3 inside venv
+                    python3 -c "import boto3; print(boto3.__version__)"  # Verify installation
                 '''
             }
         }
